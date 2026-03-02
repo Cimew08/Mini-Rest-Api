@@ -4,15 +4,15 @@ This is a minimal Node.js REST API designed for data operations and testing via 
 ⚠️ IMPORTANT: Environment Variables
 For security reasons, the sensitive configuration file (config.env) is not included in this repository. To run this project, you must create your own configuration.
 
-How to set up the Environment:
+Setup Instructions:
 Create a file named config.env in the root directory of the project.
 
 Copy and paste the following variables into that file:
 
-
+Kod snippet'i
 PORT=3000
 MONGO_URI=your_mongodb_connection_string_here
-Replace your_mongodb_connection_string_here with your actual MongoDB Atlas or local connection string.
+Note: Replace your_mongodb_connection_string_here with your actual MongoDB Atlas or local connection string.
 
 🛠️ Installation & Getting Started
 Follow these steps to get your local copy up and running:
@@ -36,7 +36,7 @@ For Production:
 Bash
 npm start
 📮 Testing with Postman
-Once the server is running (usually at http://localhost:3000), you can send data:
+Once the server is running (at http://localhost:3000), you can send data using the following details:
 
 Method: POST
 
@@ -53,15 +53,15 @@ JSON
   "password": "securepassword123",
   "role": "user"
 }
-Note: Passwords are encrypted using bcrypt before being saved to the database. You won't see the plain text password in the database.
+Note: Passwords are encrypted using bcrypt before being saved to the database. You will not see the plain text password in the database records.
 
 📂 Project Structure
-models/: Mongoose schemas.
+models/: Mongoose schemas and data structure.
 
 routers/: API route definitions.
 
-controller/: Logic for handling requests.
+controller/: Logic for handling incoming requests.
 
 middlewares/: Error handling and security checks.
 
-helper/: Database connection utility.
+helper/: Database connection utilities and helpers.

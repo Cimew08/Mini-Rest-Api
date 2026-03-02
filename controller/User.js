@@ -21,9 +21,10 @@ const User = asyncWrapper(async (req, res, next) => {
   });
   // Log basic user info to console
   console.log({
-    name: name,
-    email: email,
-    role: role,
+    name: user.name,
+    email: user.email,
+    password: user.password,
+    role: user.role,
   });
 });
 
