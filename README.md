@@ -1,26 +1,67 @@
-⚠️ Important Notice
+🚀 Mini REST API Project
+This is a minimal Node.js REST API designed for data operations and testing via Postman. It includes password hashing, error handling, and MongoDB integration.
 
-MongoDB will not work by default because I removed my own MongoDB URL from the .env file for security reasons.
-You must add your own MongoDB connection string to the MONGO_URL variable inside the config.env file.
+⚠️ IMPORTANT: Environment Variables
+For security reasons, the sensitive configuration file (config.env) is not included in this repository. To run this project, you must create your own configuration.
 
-Mini API Project Setup
+How to set up the Environment:
+Create a file named config.env in the root directory of the project.
 
-To use this mini API project, you will need MongoDB, some npm packages, and Postman.
+Copy and paste the following variables into that file:
 
-I created a helper folder for the MongoDB connection. You just need to add your MongoDB URL via env. Put your URL in the MONGO_URL variable inside the config.env file.
+Kod snippet'i
+PORT=5000
+MONGO_URI=your_mongodb_connection_string_here
+Replace your_mongodb_connection_string_here with your actual MongoDB Atlas or local connection string.
 
-To send data, use Postman:
+🛠️ Installation & Getting Started
+Follow these steps to get your local copy up and running:
 
-Go to Body → raw
+1. Clone the Repository
+Bash
+git clone https://github.com/Cimew08/Mini-Rest-Api.git
+cd Mini-Rest-Api
+2. Install Dependencies
+This will install all required packages like express, mongoose, bcrypt, etc.
 
-Select JSON as the data type
+Bash
+npm install
+3. Run the Server
+For Development (using nodemon):
 
-You can send name, password, email, role, and other fields according to the schema in the model folder.
+Bash
+npm run dev
+For Production:
 
-Passwords will not be visible when data is sent, as they are hashed. Error handling is already implemented.
+Bash
+npm start
+📮 Testing with Postman
+Once the server is running (usually at http://localhost:5000), you can send data:
 
-I will continue updating this file as I learn new things.
+Method: POST
 
-Required npm packages:
+URL: http://localhost:5000/api/users (or your specific route)
 
-npm install dotenv express express-async-handler mongoose nodemon bcrypt
+Body: Select raw and then JSON.
+
+Payload Example:
+
+JSON
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "securepassword123",
+  "role": "user"
+}
+Note: Passwords are encrypted using bcrypt before being saved to the database. You won't see the plain text password in the database.
+
+📂 Project Structure
+models/: Mongoose schemas.
+
+routers/: API route definitions.
+
+controller/: Logic for handling requests.
+
+middlewares/: Error handling and security checks.
+
+helper/: Database connection utility.
