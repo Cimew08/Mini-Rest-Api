@@ -5,9 +5,9 @@ This is a minimal Node.js REST API designed for data operations and testing via 
 For security reasons, the sensitive configuration file (config.env) is not included in this repository. To run this project, you must create your own configuration.
 
 Setup Instructions:
-Create a file named config.env in the root directory of the project.
+Create a file named config.env in the root directory.
 
-Copy and paste the following variables into that file:
+Copy and paste the following variables:
 
 Kod snippet'i
 PORT=3000
@@ -22,25 +22,21 @@ Bash
 git clone https://github.com/Cimew08/Mini-Rest-Api.git
 cd Mini-Rest-Api
 2. Install Dependencies
-This will install all required packages like express, mongoose, bcrypt, etc.
+Run the following command to install all necessary packages (express, mongoose, bcrypt, dotenv, express-async-handler, nodemon):
 
 Bash
 npm install
 3. Run the Server
-For Development (using nodemon):
-
-Bash
-npm run dev
-For Production:
+To start the project with nodemon (automatic restart on changes), simply run:
 
 Bash
 npm start
 📮 Testing with Postman
-Once the server is running (at http://localhost:3000), you can send data using the following details:
+Once the server is running (at http://localhost:3000), you can test it:
 
 Method: POST
 
-URL: http://localhost:3000/api/users (or your specific route)
+URL: http://localhost:3000/api/users
 
 Body: Select raw and then JSON.
 
@@ -53,7 +49,7 @@ JSON
   "password": "securepassword123",
   "role": "user"
 }
-Note: Passwords are encrypted using bcrypt before being saved to the database. You will not see the plain text password in the database records.
+Note: Passwords are encrypted using bcrypt before being saved. You will not see plain text passwords in the database.
 
 📂 Project Structure
 models/: Mongoose schemas and data structure.
@@ -65,3 +61,10 @@ controller/: Logic for handling incoming requests.
 middlewares/: Error handling and security checks.
 
 helper/: Database connection utilities and helpers.
+
+A quick reminder: To make sure Nodemon starts when you type npm start, don't forget to update the "scripts" section in your package.json file as follows:
+
+JSON
+"scripts": {
+  "start": "nodemon app.js"
+}
