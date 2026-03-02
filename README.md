@@ -9,7 +9,7 @@ Create a file named config.env in the root directory.
 
 Copy and paste the following variables:
 
-Kod snippet'i
+
 PORT=3000
 MONGO_URI=your_mongodb_connection_string_here
 Note: Replace your_mongodb_connection_string_here with your actual MongoDB Atlas or local connection string.
